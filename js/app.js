@@ -106,32 +106,14 @@ var api = {
 	       			var $div = null;
 	       			var $list = null;
 	       			$.each(response.list, function(index, value){
-	       				// if(counter % 8 ===0)
-	       				// {
 	       					$("#forecast").append($list);
-	       					//$div = $("<div id='div_class'></div>").hide();
-
-	       				// }
 
 	       				$list = $('<ul class="update"></ul>').attr("id", ''+counter+'');
 	       				$list.append('<li>'+'Date: '+value.dt_txt+'</li>').append('<li>'+'Temperature: '+Math.round(value.main.temp - 273.15)+"&deg;C"+'</li>').append('<li>'+'Humidity: '+Math.floor(value.main.humidity)+'</li>').append('<li>'+'Pressure: '+Math.floor(value.main.pressure)+'</li>').append('<li>'+'Wind: '+Math.floor(value.wind.deg)+'</li>').append('<li>'+'Description: '+value.weather[0].description+'</li>');
-	       				//$div.append($list);
+	       			
 	       				counter++;
-	       				// api.TemperatureInCent2 = Math.round(value.main.temp - 273.15);
-	       				// temp_forecast += "<p><span class='temp_value'>" + api.TemperatureInCent2 + "&deg;C" +'</span></p></br>';
-	       				// humidity_forecast += "<p><span class='temp_value'>Humidity: " + value.main.humidity + "</span></p></br>";
-	       				// pressure_forecast += "<p><span class='temp_value'>Pressure: " + value.main.pressure + "</span></p></br>";
-	       				// wind_forecast += "<p><span class='temp_value'>Wind: " + value.wind.deg + "</span></p></br>";
-	       				// weather_description += "<p><span id='weather_descr' class='temp_value'>" + value.weather[0].description+ '</span></p></br>';
 	       			});
 					$("#forecast").children("#1").show();
-	       			
-       			// var displayforecast = 'http://openweathermap.org/img/w/'+ response.weather[0].icon+".png";
-				 // $('#temp_div').append(temp_forecast);
-				 // $('#humidity_div').html(humidity_forecast);
-				 // $('#pressure_div').html(pressure_forecast);
-				 // $('#wind_div').html(wind_forecast);
-				 // $('#descr_div').html(weather_description);
       		});
 	}
 
